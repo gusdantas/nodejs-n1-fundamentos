@@ -1,0 +1,21 @@
+{
+  "name": "nodejs-n1-fundamentos",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Fundamentos do Node.js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gusdantas/nodejs-n1-fundamentos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gusdantas/nodejs-n1-fundamentos/issues"
+  },
+  "homepage": "https://github.com/gusdantas/nodejs-n1-fundamentos#readme"
+}
