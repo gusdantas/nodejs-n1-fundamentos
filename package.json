@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/gusdantas/nodejs-n1-fundamentos/issues"
   },
-  "homepage": "https://github.com/gusdantas/nodejs-n1-fundamentos#readme"
+  "homepage": "https://github.com/gusdantas/nodejs-n1-fundamentos#readme",
+  "dependencies": {
+    "csv": "^6.3.11"
+  }
 }

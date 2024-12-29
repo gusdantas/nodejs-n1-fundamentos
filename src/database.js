@@ -49,9 +49,29 @@ export class Database {
         const rowIndex = this.#database[table].findIndex(row => row.id === id)
 
         if (rowIndex > -1) {
-            this.#database[table][rowIndex] = { id, ...data }
-            this.#persist()
+            const newData = this.#database[table][rowIndex]
+            let dataChanged = false
+            if (data.title && data.title != newData.title) {
+                newData.title = data.title
+                dataChanged = true
+            }
+            if (data.description && data.description != newData.description) {
+                newData.description = data.description
+                dataChanged = true
+            }
+            if (data.completed_at) {
+                let newCompleted = newData.completed_at ? null : data.completed_at
+                newData.completed_at = newCompleted
+                dataChanged = true
+            }
+            if (dataChanged) {
+                newData.updated_at = data.updated_at
+                this.#database[table][rowIndex] = newData
+                this.#persist()
+            }
         }
+
+        return rowIndex
     }
 
     delete(table, id) {
@@ -61,5 +81,7 @@ export class Database {
             this.#database[table].splice(rowIndex, 1)
             this.#persist()
         }
+
+        return rowIndex
     }
 }
